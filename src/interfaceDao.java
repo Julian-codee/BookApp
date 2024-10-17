@@ -1,6 +1,6 @@
-public class interfaceDao {
-    public interface UsuarioDAO{
-        void crearLibro(Libro libro);
-        Libro leerLibro();
-    }
+import java.util.ArrayList;
+import java.util.List;
+
+public class interfaceDao implements libroDAO {
+
 }
