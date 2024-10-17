@@ -30,4 +30,14 @@ public class Libro {
     public Date getYearPublication() {
         return yearPublication;
     }
+
+    @Override
+    public String toString() {
+        return "Libro{" +
+                "id=" + id +
+                ", titulo='" + title + '\'' +
+                ", autor='" + author + '\'' +
+                ", anioPublicacion=" + yearPublication +
+                '}';
+    }
 }
