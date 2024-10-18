@@ -8,7 +8,7 @@ public class interfaceDao implements libroDAO {
     @Override
     public void agregarLibro(Libro libro) {
         libros.add(libro);
-        System.out.println("Libro agregado: " + libro);
+        System.out.println("\tLibro agregado: " + libro);
     }
 
     @Override
@@ -39,6 +39,6 @@ public class interfaceDao implements libroDAO {
     @Override
     public void eliminarLibro(int id) {
         libros.removeIf(libro -> libro.getId() == id);
-        System.out.println("Libro eliminado con ID: " + id);
+        System.out.println("\nLibro eliminado con ID: " + id + "\n");
     }
 }
