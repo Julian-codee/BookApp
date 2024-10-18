@@ -1,15 +1,38 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+import java.util.Date;
+
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
+        interfaceDao libroDAO = new interfaceDao();
+
+        // Agregar libros
+
+        libroDAO.agregarLibro(new Libro(1, "Cien años de soledad", "Gabriel García Márquez", new Date(2003)));
+        libroDAO.agregarLibro(new Libro(2, "Don Quijote de la Mancha", "Miguel de Cervantes", new Date(2022)));
+
+        // Obtener libro
+
+        Libro libro = libroDAO.obtenerLibro(2);
+        System.out.println("Libro encontrado: " + libro);
+
+        // Listar todos los libros
+
+        System.out.println("Todos los libros:");
+        for (Libro l : libroDAO.obtenerAllLibros()) {
+            System.out.println(l);
+        }
+
+        // Actualizar libro
+
+        libroDAO.actualizarLibros(new Libro(1901, "Cien años de soledad", "Gabriel García Márquez", new Date(1990)));
+        System.out.println("Libro actualizado: " + libroDAO.obtenerLibro(1));
+
+        // Eliminar libro
+
+        libroDAO.eliminarLibro(1);
+        System.out.println("Libros encontrados después de la eliminación:");
+        for (Libro l : libroDAO.obtenerAllLibros()) {
+            System.out.println(l);
         }
     }
 }
